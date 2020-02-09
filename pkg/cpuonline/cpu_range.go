@@ -8,7 +8,7 @@ import (
 
 const cpuOnline = "/sys/devices/system/cpu/online"
 
-// loosely based on https://github.com/iovisor/bcc/blob/v0.3.0/src/python/bcc/utils.py#L15
+// loosely based on https://github.com/Gui774ume/bcc/blob/v0.3.0/src/python/bcc/utils.py#L15
 func readCPURange(cpuRangeStr string) ([]uint, error) {
 	var cpus []uint
 	cpuRangeStr = strings.Trim(cpuRangeStr, "\n ")

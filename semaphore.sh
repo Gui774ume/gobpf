@@ -40,12 +40,12 @@ for kernel_version in "${kernel_versions[@]}"; do
     --volume=gobpf,kind=host,source="$PWD" \
     docker://schu/gobpf-ci:1f3a531e145a9f5f8bd53e55908d21240491202c \
     --memory=1024M \
-    --mount=volume=gobpf,target=/go/src/github.com/iovisor/gobpf \
+    --mount=volume=gobpf,target=/go/src/github.com/Gui774ume/gobpf \
     --environment=GOPATH=/go \
     --environment=C_INCLUDE_PATH="${kernel_api_header_dir}" \
     --environment=BCC_KERNEL_MODULES_SUFFIX="source" \
     --exec=/bin/sh -- -c \
-    'cd /go/src/github.com/iovisor/gobpf &&
+    'cd /go/src/github.com/Gui774ume/gobpf &&
       mount -t tmpfs tmpfs /tmp &&
       mount -t debugfs debugfs /sys/kernel/debug/ &&
       go test -tags integration -v ./...'

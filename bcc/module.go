@@ -23,7 +23,7 @@ import (
 	"syscall"
 	"unsafe"
 
-	"github.com/iovisor/gobpf/pkg/cpuonline"
+	"github.com/Gui774ume/gobpf/pkg/cpuonline"
 )
 
 /*

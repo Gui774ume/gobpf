@@ -24,7 +24,7 @@ import (
 	"strings"
 	"unsafe"
 
-	bpf "github.com/iovisor/gobpf/bcc"
+	bpf "github.com/Gui774ume/gobpf/bcc"
 )
 
 import "C"
@@ -91,7 +91,7 @@ int syscall__execve(struct pt_regs *ctx,
     // Some kernels, like Ubuntu 4.13.0-generic, return 0
     // as the real_parent->tgid.
     // We use the getPpid function as a fallback in those cases.
-    // See https://github.com/iovisor/bcc/issues/1883.
+    // See https://github.com/Gui774ume/bcc/issues/1883.
     data.ppid = task->real_parent->tgid;
 
     bpf_get_current_comm(&data.comm, sizeof(data.comm));
@@ -124,7 +124,7 @@ int do_ret_sys_execve(struct pt_regs *ctx)
     // Some kernels, like Ubuntu 4.13.0-generic, return 0
     // as the real_parent->tgid.
     // We use the getPpid function as a fallback in those cases.
-    // See https://github.com/iovisor/bcc/issues/1883.
+    // See https://github.com/Gui774ume/bcc/issues/1883.
     data.ppid = task->real_parent->tgid;
 
     bpf_get_current_comm(&data.comm, sizeof(data.comm));

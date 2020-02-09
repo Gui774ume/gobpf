@@ -311,7 +311,7 @@ func (b *Module) Log() []byte {
 // EnableOptionCompatProbe will attempt to automatically convert function
 // names in kprobe and kretprobe to maintain compatibility between kernel
 // versions.
-// See: https://github.com/iovisor/gobpf/issues/146
+// See: https://github.com/Gui774ume/gobpf/issues/146
 func (b *Module) EnableOptionCompatProbe() {
 	b.compatProbe = true
 }
